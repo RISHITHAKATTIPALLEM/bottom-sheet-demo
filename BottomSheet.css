@@ -1,0 +1,60 @@
+.bs-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(6px);
+    transition: opacity 0.3s ease;
+    z-index: 10;
+  }
+  
+  .bs-sheet {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100vh;
+    background: linear-gradient(135deg, #ffe4e1, #ffdde1, #e0c3fc, #8ec5fc);
+    border-top-left-radius: 28px;
+    border-top-right-radius: 28px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+    will-change: transform;
+    z-index: 11;
+    outline: none;
+    animation: slideUp 0.4s ease;
+  }
+  
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0%); }
+  }
+  
+  .bs-handle {
+    width: 60px;
+    height: 8px;
+    background: linear-gradient(90deg, #f472b6, #a78bfa);
+    border-radius: 999px;
+    margin: 12px auto;
+    animation: pulse 1.5s infinite ease-in-out;
+    cursor: grab;
+    touch-action: none;
+  }
+  
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 0.8;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.15);
+    }
+  }
+  
+  .bs-content {
+    padding: 20px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  
